@@ -12,5 +12,3 @@ export class CreateNotificationBody {
   @IsNotEmpty()
   category: string;
 }
-
-teste;
