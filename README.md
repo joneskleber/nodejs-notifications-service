@@ -25,3 +25,10 @@ Tudo que tem conexão com o mundo externo.
 # AULA 3
 
 npx tsc --noEmit
+
+# LIVE KAFKA
+
+- upstash (Docker)
+- vieo: a base do microservice com nodejs
+- eu não imagina que microservice era assim
+- o primeiro microservice aqui na rocketseat
