@@ -6,7 +6,7 @@ Ignite Labs |Nodejs
 
 Aula 1: #BACK-END
 Aula 2: #EVOLUÇÃO
-Aula 3:
+Aula 3: #IGNITE
 
 # AULA 1
 
@@ -23,3 +23,5 @@ Exemplo: Banco de dados, conexão com API, rota da aplicação.
 Tudo que tem conexão com o mundo externo.
 
 # AULA 3
+
+npx tsc --noEmit
