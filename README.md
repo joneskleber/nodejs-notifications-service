@@ -32,3 +32,23 @@ npx tsc --noEmit
 - vieo: a base do microservice com nodejs
 - eu não imagina que microservice era assim
 - o primeiro microservice aqui na rocketseat
+
+# AFTER
+
+Mensageria Asyncrona (Kafka)
+
+Producers
+
+- todo mundo que envia eventos
+
+Consumers
+
+- todo mundo que consome servios
+
+Topics
+
+- tipos de mensagens entre o producers vs consumers
+
+# AFTER INSTALLATION
+
+yarn add @nest/microservices
