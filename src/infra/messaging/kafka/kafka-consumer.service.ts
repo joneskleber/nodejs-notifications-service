@@ -1,24 +1,29 @@
 import { Injectable, OnModuleDestroy } from '@nestjs/common';
 import { ServerKafka } from '@nestjs/microservices';
 
+import { ConfigService } from '@nestjs/config';
+
 @Injectable()
 export class KafkaConsumerService
   extends ServerKafka
   implements OnModuleDestroy
 {
   constructor() {
+    const config = new ConfigService();
+    const kafka_username = config.get<string>('KAFKA_USERNAME') || 'undefined';
+    const kafka_password = config.get<string>('KAFKA_PASSWORD') || 'undefined';
+    const kafka_clientId = config.get<string>('KAFKA_CLIENTID') || 'undefined';
+    const kafka_brokers = config.get<string>('KAFKA_BROKERS') || 'undefined';
+
     super({
       client: {
-        clientId: 'notifications',
-        brokers: ['pretty-jackal-5748-us1-kafka.upstash.io:9092'],
+        clientId: kafka_clientId,
+        brokers: [`${kafka_brokers}`],
         sasl: {
           mechanism: 'scram-sha-256',
-          username:
-            'cHJldHR5LWphY2thbC01NzQ4JL473RvTXEoFNXQ1t4UVm1VBfsU-5WSXFbPARKE',
-          password:
-            '6s8j5t3MfL0_Tc1biow0XJpAGgibxtRIDnjGJchNMwfU7P49tzK3PJufpCIN8cBNXHMCkA==',
+          username: kafka_username,
+          password: kafka_password,
         },
-        ssl: true,
       },
     });
   }
